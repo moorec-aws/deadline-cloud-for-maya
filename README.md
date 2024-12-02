@@ -28,13 +28,13 @@ This library requires:
 
 ## Versioning
 
-This package's version follows [Semantic Versioning 2.0](https://semver.org/), but is still considered to be in its 
+This package's version follows [Semantic Versioning 2.0](https://semver.org/), but is still considered to be in its
 initial development, thus backwards incompatible versions are denoted by minor version bumps. To help illustrate how
 versions will increment during this initial development stage, they are described below:
 
-1. The MAJOR version is currently 0, indicating initial development. 
-2. The MINOR version is currently incremented when backwards incompatible changes are introduced to the public API. 
-3. The PATCH version is currently incremented when bug fixes or backwards compatible changes are introduced to the public API. 
+1. The MAJOR version is currently 0, indicating initial development.
+2. The MINOR version is currently incremented when backwards incompatible changes are introduced to the public API.
+3. The PATCH version is currently incremented when bug fixes or backwards compatible changes are introduced to the public API.
 
 ## Getting Started
 
@@ -56,12 +56,12 @@ It automatically determines the files required based on the loaded scene, allows
 
 To install the submitter plug-in:
 
-1. Install the `deadline-cloud-for-maya` Python package, with `mayapy`, into the Maya installation on your workstation by following 
+1. Install the `deadline-cloud-for-maya` Python package, with `mayapy`, into the Maya installation on your workstation by following
    Maya's official online documentation (e.g. [For Maya 2024][maya-2024-mayapy]).
-2. Copy the contents of the 
+2. Copy the contents of the
    [`/maya_submitter_plugin` directory](https://github.com/aws-deadline/deadline-cloud-for-maya/tree/release/maya_submitter_plugin)
    from the release branch of [deadline-cloud-for-maya GitHub repository](https://github.com/aws-deadline/deadline-cloud-for-maya) into
-   a directory in Maya's module search paths. See the `MAYA_MODULE_PATH` section of Maya's official documentation 
+   a directory in Maya's module search paths. See the `MAYA_MODULE_PATH` section of Maya's official documentation
    (e.g. [For Maya 2024][maya-2024-module-path]) for a list of the default search paths on your system.
 3. Within Maya, enable the DealineCloudForMaya plug-in in Maya's Plug-in Manager.
    (Main menu bar: Windows -> Settings/Preferences -> Plug-in Manager)
@@ -82,11 +82,13 @@ To install the submitter plug-in:
 Jobs created by this submitter require this adaptor be installed on your worker hosts, and that both the installed adaptor
 and the Maya executable be available on the PATH of the user that will be running your jobs.
 
+Or you can set the `MAYAPY_EXECUTABLE` to point to the Maya mayapy executable.
+
 The adaptor application is a command-line Python-based application that enhances the functionality of Maya for running
 within a render farm like Deadline Cloud. Its primary purpose for existing is to add a "sticky rendering" functionality
 where a single process instance of Maya is able to load the scene file and then dynamically be instructed to perform
 desired renders without needing to close and re-launch Maya between them. It also has additional benefits
-such as support for path mapping, and reporting the progress of your render to Deadline Cloud. The alternative 
+such as support for path mapping, and reporting the progress of your render to Deadline Cloud. The alternative
 to "sticky rendering" is that Maya would need to be run separately for each render that is done, and close afterwards.
 Some scenes can take 10's of minutes just to load for rendering, so being able to keep the application open and loaded between
 renders can be a significant time-saving optimization; particularly when the render itself is quick.
@@ -114,7 +116,7 @@ You will need to ensure that the version of Maya that you want to run is availab
 AWS Deadline Cloud's [Service Managed Fleets][service-managed-fleets] to run jobs;
 hosts do not have any rendering applications pre-installed. The standard way of accomplishing this is described
 [in the service documentation](https://docs.aws.amazon.com/deadline-cloud/latest/developerguide/provide-applications.html).
-You can find a list of the versions of Maya that are available by default 
+You can find a list of the versions of Maya that are available by default
 [in the user guide](https://docs.aws.amazon.com/deadline-cloud/latest/userguide/create-queue-environment.html#conda-queue-environment)
 if you are using the default Conda queue enivonment in your setup.
 
@@ -130,11 +132,11 @@ submitter plug-in then you can use the [Deadline Cloud application][deadline-clo
 
 ## Security
 
-We take all security reports seriously. When we receive such reports, we will 
-investigate and subsequently address any potential vulnerabilities as quickly 
-as possible. If you discover a potential security issue in this project, please 
+We take all security reports seriously. When we receive such reports, we will
+investigate and subsequently address any potential vulnerabilities as quickly
+as possible. If you discover a potential security issue in this project, please
 notify AWS/Amazon Security via our [vulnerability reporting page](http://aws.amazon.com/security/vulnerability-reporting/)
-or directly via email to [AWS Security](aws-security@amazon.com). Please do not 
+or directly via email to [AWS Security](aws-security@amazon.com). Please do not
 create a public GitHub issue in this project.
 
 ## Telemetry
