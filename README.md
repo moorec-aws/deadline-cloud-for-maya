@@ -4,7 +4,7 @@
 [![python](https://img.shields.io/pypi/pyversions/deadline-cloud-for-maya.svg?style=flat)](https://pypi.python.org/pypi/deadline-cloud-for-maya)
 [![license](https://img.shields.io/pypi/l/deadline-cloud-for-maya.svg?style=flat)](https://github.com/aws-deadline/deadline-cloud-for-maya/blob/mainline/LICENSE)
 
-AWS Deadline Cloud for Maya is a Python package that supports creating and running Audodesk Maya jobs within [AWS Deadline Cloud][deadline-cloud].
+AWS Deadline Cloud for Maya is a Python package that supports creating and running Autodesk Maya jobs within [AWS Deadline Cloud][deadline-cloud].
 It provides both the implementation of a Maya plug-in for your workstation that helps you offload the computation for your rendering workloads
 to [AWS Deadline Cloud][deadline-cloud] to free up your workstation's compute for other tasks, and the implementation of a command-line
 adaptor application based on the [Open Job Description (OpenJD) Adaptor Runtime][openjd-adaptor-runtime] that improves AWS Deadline Cloud's
@@ -52,7 +52,7 @@ scene to your farm to ensure that your setup is correctly functioning.
 The Maya submitter plug-in creates a shelf button in your Maya UI that can be used to submit jobs to AWS Deadline Cloud. Clicking this button
 reveals a UI to create a job submission for AWS Deadline Cloud using the [AWS Deadline Cloud client library][deadline-cloud-client].
 It automatically determines the files required based on the loaded scene, allows the user to specify render options, builds an
-[Open Job Description template][openjd] that defines the workflow, and submits the job to the farm and queue of your chosing.
+[Open Job Description template][openjd] that defines the workflow, and submits the job to the farm and queue of your choosing.
 
 To install the submitter plug-in:
 
@@ -63,7 +63,7 @@ To install the submitter plug-in:
    from the release branch of [deadline-cloud-for-maya GitHub repository](https://github.com/aws-deadline/deadline-cloud-for-maya) into
    a directory in Maya's module search paths. See the `MAYA_MODULE_PATH` section of Maya's official documentation
    (e.g. [For Maya 2024][maya-2024-module-path]) for a list of the default search paths on your system.
-3. Within Maya, enable the DealineCloudForMaya plug-in in Maya's Plug-in Manager.
+3. Within Maya, enable the DeadlineCloudForMaya plug-in in Maya's Plug-in Manager.
    (Main menu bar: Windows -> Settings/Preferences -> Plug-in Manager)
 4. To supply AWS account credentials for the submitter to use when submitting a job you can either:
     1. [Install and set up the Deadline Cloud Monitor][deadline-cloud-monitor-setup], and then log in to the monitor. Logging in
@@ -118,7 +118,7 @@ hosts do not have any rendering applications pre-installed. The standard way of 
 [in the service documentation](https://docs.aws.amazon.com/deadline-cloud/latest/developerguide/provide-applications.html).
 You can find a list of the versions of Maya that are available by default
 [in the user guide](https://docs.aws.amazon.com/deadline-cloud/latest/userguide/create-queue-environment.html#conda-queue-environment)
-if you are using the default Conda queue enivonment in your setup.
+if you are using the default Conda queue environment in your setup.
 
 ## Viewing the Job Bundle that will be submitted
 
